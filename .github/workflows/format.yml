@@ -23,6 +23,11 @@ jobs:
         env:
           TFENV_TERRAFORM_VERSION: latest-allowed
         run: |
+          cd modules/account-assignments
+          terraform init -backend=false
+          terraform validate
+          terraform fmt
+          cd ../permission-sets
           terraform init -backend=false
           terraform validate
           terraform fmt
