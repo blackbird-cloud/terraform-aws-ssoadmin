@@ -1,4 +1,5 @@
-## Account assignments
+<!-- BEGIN_TF_DOCS -->
+## Permission sets
 A Terraform module which helps you create permissions-sets. Read [this](https://docs.aws.amazon.com/singlesignon/latest/userguide/permissionsetsconcept.html) page for more information.
 
 ### Requirements
@@ -12,7 +13,7 @@ A Terraform module which helps you create permissions-sets. Read [this](https://
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.4.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 5 |
 
 ### Resources
 
@@ -35,3 +36,4 @@ A Terraform module which helps you create permissions-sets. Read [this](https://
 | Name | Description |
 |------|-------------|
 | <a name="output_permission_sets"></a> [permission\_sets](#output\_permission\_sets) | The created permission-sets |
+<!-- END_TF_DOCS -->
