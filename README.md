@@ -1,4 +1,3 @@
-<!-- BEGIN_TF_DOCS -->
 # AWS IAM Identity Center (SSO Admin) Terraform module
 A Terraform module which helps you assign permissions-sets to users and groups. Read [this](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html) page for more information.
 
@@ -42,9 +41,8 @@ module "groups" {
 
 
 module "permission_sets" {
-  # source  = "blackbird-cloud/ssoadmin/aws//modules/permission-sets"
-  # version = "~> 1"
-  source = "../modules/permission-sets"
+  source  = "blackbird-cloud/ssoadmin/aws//modules/permission-sets"
+  version = "~> 1"
 
   permission_sets = [
     {
@@ -63,9 +61,8 @@ module "permission_sets" {
 data "aws_caller_identity" "current" {}
 
 module "account_assignments" {
-  # source  = "blackbird-cloud/ssoadmin/aws//modules/account-assignments"
-  # version = "~> 1"
-  source = "../modules/account-assignments"
+  source  = "blackbird-cloud/ssoadmin/aws//modules/account-assignments"
+  version = "~> 1"
 
   account_assignments = [
     {
@@ -166,4 +163,3 @@ Checkout our other :point\_right: [terraform modules](https://registry.terraform
 ## Copyright
 
 Copyright © 2017-2023 [Blackbird Cloud](https://blackbird.cloud)
-<!-- END_TF_DOCS -->
