@@ -1,3 +1,4 @@
+<!-- BEGIN_TF_DOCS -->
 ## Account assignments
 A Terraform module which helps you assign permissions-sets to users and groups. Read [this](https://docs.aws.amazon.com/singlesignon/latest/userguide/useraccess.html) page for more information.
 
@@ -12,7 +13,7 @@ A Terraform module which helps you assign permissions-sets to users and groups. 
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.4.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 5 |
 
 ### Resources
 
@@ -34,3 +35,4 @@ A Terraform module which helps you assign permissions-sets to users and groups. 
 | Name | Description |
 |------|-------------|
 | <a name="output_assignments"></a> [assignments](#output\_assignments) | The created account assignments. |
+<!-- END_TF_DOCS -->
