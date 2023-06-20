@@ -1,3 +1,4 @@
+<!-- BEGIN_TF_DOCS -->
 # AWS IAM Identity Center (SSO Admin) Terraform module
 A Terraform module which helps you assign permissions-sets to users and groups. Read [this](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html) page for more information.
 
@@ -77,7 +78,8 @@ module "account_assignments" {
   ]
 }
 ```
-## Account assignments
+<!-- BEGIN_TF_DOCS -->
+## Permission sets
 A Terraform module which helps you create permissions-sets. Read [this](https://docs.aws.amazon.com/singlesignon/latest/userguide/permissionsetsconcept.html) page for more information.
 
 ### Requirements
@@ -91,7 +93,7 @@ A Terraform module which helps you create permissions-sets. Read [this](https://
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.4.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 5 |
 
 ### Resources
 
@@ -114,7 +116,9 @@ A Terraform module which helps you create permissions-sets. Read [this](https://
 | Name | Description |
 |------|-------------|
 | <a name="output_permission_sets"></a> [permission\_sets](#output\_permission\_sets) | The created permission-sets |
+<!-- END_TF_DOCS -->
 
+<!-- BEGIN_TF_DOCS -->
 ## Account assignments
 A Terraform module which helps you assign permissions-sets to users and groups. Read [this](https://docs.aws.amazon.com/singlesignon/latest/userguide/useraccess.html) page for more information.
 
@@ -129,7 +133,7 @@ A Terraform module which helps you assign permissions-sets to users and groups. 
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.4.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 5 |
 
 ### Resources
 
@@ -151,6 +155,7 @@ A Terraform module which helps you assign permissions-sets to users and groups. 
 | Name | Description |
 |------|-------------|
 | <a name="output_assignments"></a> [assignments](#output\_assignments) | The created account assignments. |
+<!-- END_TF_DOCS -->
 
 ## About
 
@@ -161,3 +166,4 @@ Checkout our other :point\_right: [terraform modules](https://registry.terraform
 ## Copyright
 
 Copyright © 2017-2023 [Blackbird Cloud](https://blackbird.cloud)
+<!-- END_TF_DOCS -->
