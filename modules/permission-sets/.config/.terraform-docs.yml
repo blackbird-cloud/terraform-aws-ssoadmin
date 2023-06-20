@@ -1,0 +1,33 @@
+formatter: "markdown"
+
+header-from: ./.config/header.md
+footer-from: ./.config/footer.md
+
+output:
+  file: ./README.md
+  mode: replace
+  template: |-
+    {{ .Content }}
+
+sections:
+  hide:
+    - header
+    - footer
+    - modules
+
+settings:
+  indent: 3
+
+content: |-
+  ## Permission sets
+  A Terraform module which helps you create permissions-sets. Read [this](https://docs.aws.amazon.com/singlesignon/latest/userguide/permissionsetsconcept.html) page for more information.
+
+  {{ .Requirements }}
+
+  {{ .Providers }}
+
+  {{ .Resources }}
+
+  {{ .Inputs }}
+
+  {{ .Outputs }}
