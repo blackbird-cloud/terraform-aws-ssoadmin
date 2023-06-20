@@ -42,9 +42,8 @@ module "groups" {
 
 
 module "permission_sets" {
-  # source  = "blackbird-cloud/ssoadmin/aws//modules/permission-sets"
-  # version = "~> 1"
-  source = "../modules/permission-sets"
+  source  = "blackbird-cloud/ssoadmin/aws//modules/permission-sets"
+  version = "~> 1"
 
   permission_sets = [
     {
@@ -63,9 +62,8 @@ module "permission_sets" {
 data "aws_caller_identity" "current" {}
 
 module "account_assignments" {
-  # source  = "blackbird-cloud/ssoadmin/aws//modules/account-assignments"
-  # version = "~> 1"
-  source = "../modules/account-assignments"
+  source  = "blackbird-cloud/ssoadmin/aws//modules/account-assignments"
+  version = "~> 1"
 
   account_assignments = [
     {
