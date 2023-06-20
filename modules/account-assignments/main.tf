@@ -3,16 +3,18 @@ locals {
     for assignment in var.account_assignments :
     "${assignment.account}-${assignment.principal_type}-${assignment.principal_name}-${assignment.permission_set_name}" => assignment
   }
-  group_list = [for assignment in var.account_assignments : assignment.principal_name if assignment.principal_type == "GROUP"]
-  user_list  = [for assignment in var.account_assignments : assignment.principal_name if assignment.principal_type == "USER"]
+  group_list = [
+    for assignment in var.account_assignments : assignment.principal_name if assignment.principal_type == "GROUP"
+  ]
+  user_list = [
+    for assignment in var.account_assignments : assignment.principal_name if assignment.principal_type == "USER"
+  ]
 }
 
 data "aws_ssoadmin_instances" "default" {}
 
 data "aws_identitystore_group" "default" {
-  for_each = {
-    for group in local.group_list : group.principal_name => group
-  }
+  for_each = toset(local.group_list)
 
   identity_store_id = data.aws_ssoadmin_instances.default.identity_store_ids[0]
 
@@ -25,9 +27,7 @@ data "aws_identitystore_group" "default" {
 }
 
 data "aws_identitystore_user" "default" {
-  for_each = {
-    for user in local.user_list : user.principal_name => user
-  }
+  for_each = toset(local.user_list)
 
   identity_store_id = data.aws_ssoadmin_instances.default.identity_store_ids[0]
 
