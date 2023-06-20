@@ -1,3 +1,4 @@
+<!-- BEGIN_TF_DOCS -->
 # AWS IAM Identity Center (SSO Admin) Terraform module
 A Terraform module which helps you assign permissions-sets to users and groups. Read [this](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html) page for more information.
 
@@ -163,3 +164,4 @@ Checkout our other :point\_right: [terraform modules](https://registry.terraform
 ## Copyright
 
 Copyright © 2017-2023 [Blackbird Cloud](https://blackbird.cloud)
+<!-- END_TF_DOCS -->
