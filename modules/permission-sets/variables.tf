@@ -11,6 +11,11 @@ variable "permission_sets" {
       name = string
       path = string
     }))
+    permissions_boundary_attachment = optional(object({
+      name               = optional(string)
+      path               = optional(string)
+      managed_policy_arn = optional(string)
+    }))
   }))
   description = "A list of permission-sets that you would like to create."
 }
