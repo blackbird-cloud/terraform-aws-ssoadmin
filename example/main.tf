@@ -46,7 +46,8 @@ module "permission_sets" {
       tags                                = {},
       inline_policy                       = "",
       customer_managed_policy_attachments = [],
-      policy_attachments                  = ["arn:aws:iam::aws:policy/AdministratorAccess"]
+      policy_attachments                  = ["arn:aws:iam::aws:policy/AdministratorAccess"],
+      permissions_boundary_attachment     = []
     },
   ]
 }

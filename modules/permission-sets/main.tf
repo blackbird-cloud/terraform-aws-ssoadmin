@@ -56,9 +56,27 @@ resource "aws_ssoadmin_customer_managed_policy_attachment" "default" {
   instance_arn       = local.instance_arn
   permission_set_arn = aws_ssoadmin_permission_set.default[each.value.policy_set].arn
 
-
   customer_managed_policy_reference {
     name = each.value.customer_managed_policy_attachment.name
     path = each.value.customer_managed_policy_attachment.path
+  }
+}
+
+resource "aws_ssoadmin_permissions_boundary_attachment" "default" {
+  for_each = {
+    for permission_set in var.permission_sets : permission_set.name => permission_set.permissions_boundary_attachment if permission_set.permissions_boundary_attachment != null
+  }
+  instance_arn       = local.instance_arn
+  permission_set_arn = aws_ssoadmin_permission_set.default[each.key].arn
+
+  permissions_boundary {
+    dynamic "customer_managed_policy_reference" {
+      for_each = (each.value.name != "" && each.value.path != "") ? [each.value] : []
+      content {
+        name = customer_managed_policy_reference.value.name
+        path = customer_managed_policy_reference.value.path
+      }
+    }
+    managed_policy_arn = try(each.value.managed_policy_arn, null)
   }
 }
