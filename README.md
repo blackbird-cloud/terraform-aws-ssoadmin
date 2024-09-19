@@ -78,25 +78,10 @@ module "account_assignments" {
 }
 ```
 
-## Requirements
+## Modules
 
-No requirements.
-
-## Providers
-
-No providers.
-
-## Resources
-
-No resources.
-
-## Inputs
-
-No inputs.
-
-## Outputs
-
-No outputs.
+- [Account Assignments](./modules/account-assignments/README.md)
+- [Permission Sets](./modules/permission-sets/README.md)
 
 ## About
 
